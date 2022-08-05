@@ -8,7 +8,7 @@ import pages.HomePage;
 public class LoginTest {
 	
 	HomePage home = new HomePage();
-	@Test
+	@Test(priority=1)
 	public void loginTest() {
 		home.doLogin();
 	}

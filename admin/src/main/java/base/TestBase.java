@@ -93,6 +93,7 @@ public class TestBase {
 			log.debug("browser set as " + browser);
 
 			// choosing browser
+			
 			if (config.getProperty("browser").equals("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				// setting chrome options
@@ -116,6 +117,23 @@ public class TestBase {
 				driver = new FirefoxDriver();
 				log.debug("Firefox browser launched successfully");
 			}
+			
+			// choosing browser
+			/*
+			//using docker
+			if (config.getProperty("browser").equals("chrome")) {
+				ChromeOptions opt = new ChromeOptions();
+				try {
+					driver = new RemoteWebDriver(new URL("http://localhost:4444"), opt);
+				} catch (MalformedURLException e) {
+					e.printStackTrace();
+				}
+				log.debug("Chrome driver launched successfully");	
+			} else if (config.getProperty("browser").equals("edge")) {
+				
+			} else if (config.getProperty("browser").equals("firefox")) {
+				
+			}*/
 
 			// managing window and timeouts
 			driver.get(config.getProperty("testsiteurl"));
@@ -185,6 +203,19 @@ public class TestBase {
 
 		test.log(Status.INFO, "Selecting from dropdown: " + locator + " value as: " + value);
 		log.debug("Selecting from dropdown: " + locator + " value as: " + value);
+	}
+	public static void clear(String locator) {
+		if (locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).clear();
+		} else if (locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).clear();
+		} else if (locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).clear();
+		} else if (locator.endsWith("_linkText")) {
+			driver.findElement(By.linkText(OR.getProperty(locator))).clear();
+		}
+		test.log(Status.INFO, "clearing the: "+ locator);
+		log.debug("Clearing the auto fill from "+ locator);
 	}
 
 	public Boolean isElementPresent(By by) {

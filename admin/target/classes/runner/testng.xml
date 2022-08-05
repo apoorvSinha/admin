@@ -7,9 +7,14 @@
 		<listener class-name="listeners.CustomListeners"></listener>
 		<listener class-name="listeners.ExtentListeners"></listener>
 	</listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="Login Test">
     <classes>
       <class name="testCases.LoginTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testCases.ProductPage"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
