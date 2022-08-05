@@ -68,7 +68,22 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
@@ -166,10 +181,11 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+
 		</plugins>
 		<testResources>
 			<testResource>
-				<directory>src/test/resources/com/apoorv/properties</directory>
+				<directory>/src/main/resources/properties</directory>
 				<includes>
 					<include>log4j.properties</include>
 				</includes>

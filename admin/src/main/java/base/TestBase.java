@@ -151,37 +151,34 @@ public class TestBase {
 	public static void quit() {
 		driver.quit();
 	}
+	
+	public static By findLocatorby(String locator) {
+		if (locator.endsWith("_CSS")) {
+			return By.cssSelector(OR.getProperty(locator));
+
+		} else if (locator.endsWith("_XPATH")) {
+			return By.xpath(OR.getProperty(locator));
+
+		} else if (locator.endsWith("_ID")) {
+			return By.id(OR.getProperty(locator));
+
+		} else if (locator.endsWith("_linkText")) {
+			return By.linkText(OR.getProperty(locator));
+		}
+		return null;
+	}
 
 	public static void click(String locator) {
 
-		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
-
-		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).click();
-
-		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).click();
-
-		} else if (locator.endsWith("_linkText")) {
-			driver.findElement(By.linkText(OR.getProperty(locator))).click();
-		}
-
+		driver.findElement(findLocatorby(locator)).click();
 		test.log(Status.INFO, "Clicking on: " + locator);
 		log.debug("Clicking on: " + locator);
 	}
 
 	public static void type(String locator, String value) {
-		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_linkText")) {
-			driver.findElement(By.linkText(OR.getProperty(locator))).sendKeys(value);
-		}
 
+		
+		driver.findElement(findLocatorby(locator)).sendKeys(value);
 		test.log(Status.INFO, "Typing in: " + locator + " entered value is: " + value);
 		log.debug("Typing in: " + locator + " entered value is: " + value);
 	}
@@ -189,15 +186,8 @@ public class TestBase {
 	static WebElement dropDown;
 
 	public static void select(String locator, String value) {
-		if (locator.endsWith("_CSS")) {
-			dropDown = driver.findElement(By.cssSelector(OR.getProperty(locator)));
-		} else if (locator.endsWith("_XPATH")) {
-			dropDown = driver.findElement(By.xpath(OR.getProperty(locator)));
-		} else if (locator.endsWith("_ID")) {
-			dropDown = driver.findElement(By.id(OR.getProperty(locator)));
-		} else if (locator.endsWith("_linkText")) {
-			dropDown = driver.findElement(By.linkText(OR.getProperty(locator)));
-		}
+	
+		dropDown = driver.findElement(findLocatorby(locator));
 		Select selected = new Select(dropDown);
 		selected.selectByVisibleText(value);
 
@@ -205,15 +195,8 @@ public class TestBase {
 		log.debug("Selecting from dropdown: " + locator + " value as: " + value);
 	}
 	public static void clear(String locator) {
-		if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).clear();
-		} else if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).clear();
-		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).clear();
-		} else if (locator.endsWith("_linkText")) {
-			driver.findElement(By.linkText(OR.getProperty(locator))).clear();
-		}
+
+		driver.findElement(findLocatorby(locator)).clear();
 		test.log(Status.INFO, "clearing the: "+ locator);
 		log.debug("Clearing the auto fill from "+ locator);
 	}
