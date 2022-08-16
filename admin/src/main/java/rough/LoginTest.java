@@ -1,12 +1,17 @@
 package rough;
 
-import base.TestBase;
-import pages.HomePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest {
 	public static void main(String[] args) {
-		TestBase base = new TestBase();
-		HomePage home = new HomePage();
-		home.doLogin();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver= new ChromeDriver();
+		
+		driver.get("file:///C:/Users/apoorv/OneDrive/Desktop/admin/admin-demo.nopcommerce.com/login1f43.html");
+	//	driver.get("https://www.google.co.in/");
+		
 	}
 }

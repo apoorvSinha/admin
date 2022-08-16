@@ -185,7 +185,7 @@
 		</plugins>
 		<testResources>
 			<testResource>
-				<directory>/src/main/resources/properties</directory>
+				<directory>./src/main/resources/properties</directory>
 				<includes>
 					<include>log4j.properties</include>
 				</includes>

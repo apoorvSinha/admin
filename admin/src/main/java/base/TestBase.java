@@ -11,12 +11,16 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -39,8 +43,10 @@ public class TestBase {
 	public static WebDriverWait wait;
 	public static ExtentManager extent;
 	public static ExtentTest test;
+	public static Actions actions;
 	public static String browser;
-	public static Logger log = Logger.getLogger("devpinoyLogger");
+	public static Logger log = Logger.getLogger(TestBase.class.getName());
+	public static JavascriptExecutor js;
 
 	public static WebDriver driver;
 
@@ -51,46 +57,46 @@ public class TestBase {
 			// load configurations
 			try {
 				fis = new FileInputStream(".//src/main/resources/properties/config.propeties");
-				log.debug("Config file found");
+				log.info("Config file found");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-				log.debug("Config file load error due to " + e.getMessage());
+				log.info("Config file load error due to " + e.getMessage());
 			}
 			try {
 				config.load(fis);
-				log.debug("Config file loaded");
+				log.info("Config file loaded");
 			} catch (IOException e1) {
 				e1.printStackTrace();
-				log.debug("Config file load error not found due to " + e1.getMessage());
+				log.info("Config file load error not found due to " + e1.getMessage());
 			}
 
 			// load Object repository
 			try {
 				fis = new FileInputStream(".//src/main/resources/properties/OR.properties");
-				log.debug("OBject Repository file found successfully");
+				log.info("OBject Repository file found successfully");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-				log.debug("Object repository file not found due to " + e.getMessage());
+				log.info("Object repository file not found due to " + e.getMessage());
 			}
 			try {
 				OR.load(fis);
-				log.debug("Object Repository file loaded");
+				log.info("Object Repository file loaded");
 			} catch (IOException e) {
 				e.printStackTrace();
-				log.debug("Object repository file load error not found due to " + e.getMessage());
+				log.info("Object repository file load error not found due to " + e.getMessage());
 			}
 
 			// jenkins setup browser
 			if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
 				browser = System.getenv("browser");
-				log.debug("Browser value " + browser + " received from jenkins");
+				log.info("Browser value " + browser + " received from jenkins");
 			} else {
 				browser = config.getProperty("browser");
-				log.debug("Browser value " + browser + "received from config file");
+				log.info("Browser value " + browser + "received from config file");
 			}
 			// if browser value comes from pipeline
 			config.setProperty("browser", browser);
-			log.debug("browser set as " + browser);
+			log.info("browser set as " + browser);
 
 			// choosing browser
 			
@@ -107,15 +113,15 @@ public class TestBase {
 				options.addArguments("--disable-infobars");
 
 				driver = new ChromeDriver(options);
-				log.debug("Chrome driver launched successfully");
+				log.info("Chrome driver launched successfully");
 			} else if (config.getProperty("browser").equals("edge")) {
 				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
-				log.debug("Edge browser launched successfully");
+				log.info("Edge browser launched successfully");
 			} else if (config.getProperty("browser").equals("firefox")) {
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
-				log.debug("Firefox browser launched successfully");
+				log.info("Firefox browser launched successfully");
 			}
 			
 			// choosing browser
@@ -167,20 +173,56 @@ public class TestBase {
 		}
 		return null;
 	}
+	
+	public static String findLocatorString(String locator) {
+		if (locator.endsWith("_CSS")) {
+			return OR.getProperty(locator);
+
+		} else if (locator.endsWith("_XPATH")) {
+			return OR.getProperty(locator);
+
+		} else if (locator.endsWith("_ID")) {
+			return OR.getProperty(locator);
+
+		} else if (locator.endsWith("_linkText")) {
+			return OR.getProperty(locator);
+		}
+		return null;
+	}
 
 	public static void click(String locator) {
-
+		wait.until(ExpectedConditions.presenceOfElementLocated(findLocatorby(locator)));
 		driver.findElement(findLocatorby(locator)).click();
-		test.log(Status.INFO, "Clicking on: " + locator);
-		log.debug("Clicking on: " + locator);
+//		test.log(Status.INFO, "Clicking on: " + locator);
+		log.info("Clicking on: " + locator);
+	}
+	
+	public static void clickCheckbox(String locator) {
+		driver.findElement(findLocatorby(locator)).click();
+		log.info("Clicking on checkbox: "+ locator);
+	}
+	
+	
+	public static void takeaction(String key) {
+		actions = new Actions(driver);
+		if(key.equalsIgnoreCase("escape")) {
+			actions.sendKeys(Keys.ESCAPE).perform();
+			log.info("Clicking the escape key");
+		}
+		
+	}
+	public static void preessKey(Keys key) {
+		actions = new Actions(driver);
+		if(key.equals(Keys.HOME)) {
+			actions.sendKeys(Keys.HOME).perform();
+		}
 	}
 
 	public static void type(String locator, String value) {
-
-		
+		wait.until(ExpectedConditions.presenceOfElementLocated(findLocatorby(locator)));		
 		driver.findElement(findLocatorby(locator)).sendKeys(value);
-		test.log(Status.INFO, "Typing in: " + locator + " entered value is: " + value);
-		log.debug("Typing in: " + locator + " entered value is: " + value);
+//		test.log(Status.INFO, "Typing in: " + locator + " entered value is: " + value);
+		log.info("Typing in: " + locator + " entered value is: " + value);
 	}
 
 	static WebElement dropDown;
@@ -191,15 +233,31 @@ public class TestBase {
 		Select selected = new Select(dropDown);
 		selected.selectByVisibleText(value);
 
-		test.log(Status.INFO, "Selecting from dropdown: " + locator + " value as: " + value);
-		log.debug("Selecting from dropdown: " + locator + " value as: " + value);
+//		test.log(Status.INFO, "Selecting from dropdown: " + locator + " value as: " + value);
+		log.info("Selecting from dropdown: " + locator + " value as: " + value);
 	}
 	public static void clear(String locator) {
 
 		driver.findElement(findLocatorby(locator)).clear();
-		test.log(Status.INFO, "clearing the: "+ locator);
-		log.debug("Clearing the auto fill from "+ locator);
+//		test.log(Status.INFO, "clearing the: "+ locator);
+		log.info("Clearing the auto fill from "+ locator);
 	}
+	
+	public static void switchFrame(String locator) {
+		driver.switchTo().frame(findLocatorString(locator));
+		log.info("Switching the frame");
+	}
+	public static void switchParent() {
+		driver.switchTo().parentFrame();
+		log.info("Switching back to parent frame");
+	}
+	
+	public static void scrollDown() {
+		js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0, 500)");
+		log.info("scroll down ");
+	}
+	
 
 	public Boolean isElementPresent(By by) {
 		try {
