@@ -3,6 +3,8 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -20,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -85,7 +88,7 @@ public class TestBase {
 				e.printStackTrace();
 				log.info("Object repository file load error not found due to " + e.getMessage());
 			}
-
+			/*
 			// jenkins setup browser
 			if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
 				browser = System.getenv("browser");
@@ -97,50 +100,54 @@ public class TestBase {
 			// if browser value comes from pipeline
 			config.setProperty("browser", browser);
 			log.info("browser set as " + browser);
-
-			// choosing browser
+			*/
 			
-			if (config.getProperty("browser").equals("chrome")) {
-				WebDriverManager.chromedriver().setup();
-				// setting chrome options
-				Map<String, Object> prefs = new HashMap<String, Object>();
-				prefs.put("profile.default_content_setting_values.notifications", 2);
-				prefs.put("credentials_enable_service", false);
-				prefs.put("profile.password_manager_enabled", false);
-				ChromeOptions options = new ChromeOptions();
-				options.setExperimentalOption("prefs", prefs);
-				options.addArguments("--disable-extensions");
-				options.addArguments("--disable-infobars");
+			// choosing browser from local
+			if(config.getProperty("environment").equalsIgnoreCase("local")) {
+				if (config.getProperty("browser").equals("chrome")) {
+					WebDriverManager.chromedriver().setup();
+					// setting chrome options
+					Map<String, Object> prefs = new HashMap<String, Object>();
+					prefs.put("profile.default_content_setting_values.notifications", 2);
+					prefs.put("credentials_enable_service", false);
+					prefs.put("profile.password_manager_enabled", false);
+					ChromeOptions options = new ChromeOptions();
+					options.setExperimentalOption("prefs", prefs);
+					options.addArguments("--disable-extensions");
+					options.addArguments("--disable-infobars");
 
-				driver = new ChromeDriver(options);
-				log.info("Chrome driver launched successfully");
-			} else if (config.getProperty("browser").equals("edge")) {
-				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
-				log.info("Edge browser launched successfully");
-			} else if (config.getProperty("browser").equals("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				log.info("Firefox browser launched successfully");
+					driver = new ChromeDriver(options);
+					log.info("Chrome driver launched successfully");
+				} else if (config.getProperty("browser").equals("edge")) {
+					WebDriverManager.edgedriver().setup();
+					driver = new EdgeDriver();
+					log.info("Edge browser launched successfully");
+				} else if (config.getProperty("browser").equals("firefox")) {
+					WebDriverManager.firefoxdriver().setup();
+					driver = new FirefoxDriver();
+					log.info("Firefox browser launched successfully");
+				}
 			}
 			
+			
 			// choosing browser
-			/*
-			//using docker
-			if (config.getProperty("browser").equals("chrome")) {
-				ChromeOptions opt = new ChromeOptions();
-				try {
-					driver = new RemoteWebDriver(new URL("http://localhost:4444"), opt);
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
+			else if(config.getProperty("environment").equalsIgnoreCase("docker")) {
+				//using docker
+				if (config.getProperty("browser").equals("chrome")) {
+					ChromeOptions opt = new ChromeOptions();
+					try {
+						driver = new RemoteWebDriver(new URL("http://localhost:4444"), opt);
+					} catch (MalformedURLException e) {
+						e.printStackTrace();
+					}
+					log.debug("Chrome driver launched successfully");	
+				} else if (config.getProperty("browser").equals("edge")) {
+					
+				} else if (config.getProperty("browser").equals("firefox")) {
+					
 				}
-				log.debug("Chrome driver launched successfully");	
-			} else if (config.getProperty("browser").equals("edge")) {
-				
-			} else if (config.getProperty("browser").equals("firefox")) {
-				
-			}*/
-
+			}
+		
 			// managing window and timeouts
 			driver.get(config.getProperty("testsiteurl"));
 			driver.manage().window().maximize();

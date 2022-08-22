@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-16T13:45:20Z" name="Suite" finished-at="2022-08-16T13:45:43Z" duration-ms="23461">
+  <suite started-at="2022-08-22T03:52:47Z" name="Suite" finished-at="2022-08-22T03:53:43Z" duration-ms="56020">
     <groups>
     </groups>
-    <test started-at="2022-08-16T13:45:20Z" name="Login Test" finished-at="2022-08-16T13:45:25Z" duration-ms="5026">
+    <test started-at="2022-08-22T03:52:47Z" name="Login Test" finished-at="2022-08-22T03:52:58Z" duration-ms="10587">
       <class name="testCases.LoginTest">
-        <test-method signature="loginTest()[pri:1, instance:testCases.LoginTest@6535117e]" started-at="2022-08-16T13:45:20Z" name="loginTest" finished-at="2022-08-16T13:45:25Z" duration-ms="4958" status="PASS">
+        <test-method signature="loginTest()[pri:1, instance:testCases.LoginTest@15d42ccb]" started-at="2022-08-22T03:52:47Z" name="loginTest" finished-at="2022-08-22T03:52:58Z" duration-ms="10439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
       </class> <!-- testCases.LoginTest -->
     </test> <!-- Login Test -->
-    <test started-at="2022-08-16T13:45:25Z" name="Test" finished-at="2022-08-16T13:45:43Z" duration-ms="18422">
+    <test started-at="2022-08-22T03:52:58Z" name="Test" finished-at="2022-08-22T03:53:43Z" duration-ms="45386">
       <class name="testCases.ProductPage">
-        <test-method signature="productPage()[pri:0, instance:testCases.ProductPage@329bad59]" started-at="2022-08-16T13:45:25Z" name="productPage" finished-at="2022-08-16T13:45:43Z" duration-ms="18409" status="PASS">
+        <test-method signature="productPage()[pri:0, instance:testCases.ProductPage@6415f61e]" started-at="2022-08-22T03:52:58Z" name="productPage" finished-at="2022-08-22T03:53:43Z" duration-ms="45383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productPage -->
