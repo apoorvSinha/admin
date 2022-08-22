@@ -58,7 +58,7 @@ public class Products extends TestBase{
 			takeaction("save_CSS");
 			preessKey(Keys.HOME);
 			click("save_CSS");
-			
+			quit();
 		}
 		
 	}
