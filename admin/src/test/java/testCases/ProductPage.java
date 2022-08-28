@@ -9,6 +9,6 @@ public class ProductPage {
 	
 	@Test
 	public void productPage() {
-		dash.gotoCatalog().gotoProducts();
+		dash.gotoCatalog().gotoProducts().addnew();
 	}
 }

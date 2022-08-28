@@ -5,7 +5,7 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
 		<listener class-name="listeners.CustomListeners"></listener>
-		<listener class-name="listeners.ExtentListeners"></listener>
+<!--		<listener class-name="listeners.ExtentListeners"></listener>  -->
 	</listeners>
   <test thread-count="5" name="Login Test">
     <classes>
