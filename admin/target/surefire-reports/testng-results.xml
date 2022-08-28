@@ -1,22 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Captured screenshot]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href=errorAt16_13.jpeg ><img src=errorAt16_13.jpeg height=1280 width =720></a>]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-08-22T03:52:47Z" name="Suite" finished-at="2022-08-22T03:53:43Z" duration-ms="56020">
+  <suite started-at="2022-08-28T10:42:41Z" name="Suite" finished-at="2022-08-28T10:43:34Z" duration-ms="52857">
     <groups>
     </groups>
-    <test started-at="2022-08-22T03:52:47Z" name="Login Test" finished-at="2022-08-22T03:52:58Z" duration-ms="10587">
+    <test started-at="2022-08-28T10:42:41Z" name="Login Test" finished-at="2022-08-28T10:42:49Z" duration-ms="7185">
       <class name="testCases.LoginTest">
-        <test-method signature="loginTest()[pri:1, instance:testCases.LoginTest@15d42ccb]" started-at="2022-08-22T03:52:47Z" name="loginTest" finished-at="2022-08-22T03:52:58Z" duration-ms="10439" status="PASS">
+        <test-method signature="loginTest()[pri:1, instance:testCases.LoginTest@7bc44ce8]" started-at="2022-08-28T10:42:41Z" name="loginTest" finished-at="2022-08-28T10:42:48Z" duration-ms="7042" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
       </class> <!-- testCases.LoginTest -->
     </test> <!-- Login Test -->
-    <test started-at="2022-08-22T03:52:58Z" name="Test" finished-at="2022-08-22T03:53:43Z" duration-ms="45386">
+    <test started-at="2022-08-28T10:42:49Z" name="Test" finished-at="2022-08-28T10:43:34Z" duration-ms="45632">
       <class name="testCases.ProductPage">
-        <test-method signature="productPage()[pri:0, instance:testCases.ProductPage@6415f61e]" started-at="2022-08-22T03:52:58Z" name="productPage" finished-at="2022-08-22T03:53:43Z" duration-ms="45383" status="PASS">
+        <test-method signature="productPage()[pri:0, instance:testCases.ProductPage@4faa298]" started-at="2022-08-28T10:42:49Z" name="productPage" finished-at="2022-08-28T10:43:34Z" duration-ms="45278" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <li tabindex="-1" role="option" unselectable="on" class="k-item" aria-selected="false" data-offset-index="1">...</li> is not clickable at point (733, 468). Other element would receive the click: <li tabindex="-1" role="option" unselectable="on" class="k-item" aria-selected="false" data-offset-index="3">...</li>
+  (Session info: chrome=104.0.5112.102)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'APOORV', ip: '192.168.29.231', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\apoorv\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de7c90c9d1d113f7b0fac0db7693040]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li tabindex="-1" role="option" unselectable="on" class="k-item" aria-selected="false" data-offset-index="1">...</li> is not clickable at point (733, 468). Other element would receive the click: <li tabindex="-1" role="option" unselectable="on" class="k-item" aria-selected="false" data-offset-index="3">...</li>
+  (Session info: chrome=104.0.5112.102)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'APOORV', ip: '192.168.29.231', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.102, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\apoorv\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de7c90c9d1d113f7b0fac0db7693040
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at base.TestBase.click(TestBase.java:202)
+at pages.catalog.products.Products.addnew(Products.java:29)
+at testCases.ProductPage.productPage(ProductPage.java:12)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
+            <line>
+              <![CDATA[Captured screenshot]]>
+            </line>
+            <line>
+              <![CDATA[<a target="_blank" href=errorAt16_13.jpeg ><img src=errorAt16_13.jpeg height=1280 width =720></a>]]>
+            </line>
           </reporter-output>
         </test-method> <!-- productPage -->
       </class> <!-- testCases.ProductPage -->
