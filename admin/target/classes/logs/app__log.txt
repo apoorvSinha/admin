@@ -1,59 +1,59 @@
-INFO    2022-08-28 16:26:16,699 [main] base.TestBase  - Config file found
-INFO    2022-08-28 16:26:16,700 [main] base.TestBase  - Config file loaded
-INFO    2022-08-28 16:26:16,701 [main] base.TestBase  - OBject Repository file found successfully
-INFO    2022-08-28 16:26:16,701 [main] base.TestBase  - Object Repository file loaded
-INFO    2022-08-28 16:26:16,987 [main] io.github.bonigarcia.wdm.WebDriverManager  - Using chromedriver 104.0.5112.79 (resolved driver for Chrome 104)
-INFO    2022-08-28 16:26:17,019 [main] io.github.bonigarcia.wdm.WebDriverManager  - Exporting webdriver.chrome.driver as C:\Users\apoorv\.cache\selenium\chromedriver\win32\104.0.5112.79\chromedriver.exe
-INFO    2022-08-28 16:26:19,169 [main] base.TestBase  - Chrome driver launched successfully
-INFO    2022-08-28 16:26:22,273 [main] base.TestBase  - Clearing the auto fill from email_CSS
-INFO    2022-08-28 16:26:22,361 [main] base.TestBase  - Typing in: email_CSS entered value is: admin@yourstore.com
-INFO    2022-08-28 16:26:22,418 [main] base.TestBase  - Clearing the auto fill from password_CSS
-INFO    2022-08-28 16:26:22,479 [main] base.TestBase  - Typing in: password_CSS entered value is: admin
-INFO    2022-08-28 16:26:26,292 [main] base.TestBase  - Clicking on: login_XPATH
-INFO    2022-08-28 16:26:26,557 [main] base.TestBase  - Clicking on: catalog_XPATH
-INFO    2022-08-28 16:26:31,869 [main] base.TestBase  - Clicking on: product_CSS
-INFO    2022-08-28 16:26:49,159 [main] base.TestBase  - Clicking on: add_new_product_CSS
-INFO    2022-08-28 16:26:49,424 [main] base.TestBase  - Typing in: productName_XPATH entered value is: some product name
-INFO    2022-08-28 16:26:49,608 [main] base.TestBase  - Typing in: shortDescription_XPATH entered value is: thin and portable computer
-INFO    2022-08-28 16:26:59,727 [main] base.TestBase  - Switching the frame
-INFO    2022-08-28 16:26:59,887 [main] base.TestBase  - Typing in: Fulldescription_CSS entered value is: gaming laptop with high performance
-INFO    2022-08-28 16:26:59,887 [main] base.TestBase  - Switching back to parent frame
-INFO    2022-08-28 16:27:00,071 [main] base.TestBase  - Typing in: sku_XPATH entered value is: ABC023
-INFO    2022-08-28 16:27:00,199 [main] base.TestBase  - Clicking on: categories_CSS
-INFO    2022-08-28 16:27:00,408 [main] base.TestBase  - Clicking on: select_categories_CSS
-INFO    2022-08-28 16:27:00,592 [main] base.TestBase  - Clicking on: manufacturers_CSS
-INFO    2022-08-28 16:27:00,672 [main] base.TestBase  - Clicking on: select_manufacturers_CSS
-INFO    2022-08-28 16:27:00,688 [main] base.TestBase  - scroll down 
-INFO    2022-08-28 16:27:00,800 [main] base.TestBase  - Clicking on: product_tag_CSS
-INFO    2022-08-28 16:27:00,968 [main] base.TestBase  - Typing in: GTIN_number_CSS entered value is: ABC34
-INFO    2022-08-28 16:27:01,144 [main] base.TestBase  - Typing in: manufacturer_part_CSS entered value is: 1234
-INFO    2022-08-28 16:27:01,296 [main] base.TestBase  - Clicking on: customer_roles_CSS
-INFO    2022-08-28 16:27:01,384 [main] base.TestBase  - Clicking on: select_customer_roles_CSS
-INFO    2022-08-28 16:27:01,416 [main] base.TestBase  - Clicking the escape key
-INFO    2022-08-28 16:27:01,576 [main] base.TestBase  - Clicking on: limited_to_stores_CSS
-INFO    2022-08-28 16:27:01,736 [main] base.TestBase  - Clicking on: select_limited_to_stores_XPATH
-INFO    2022-08-28 16:27:01,752 [main] base.TestBase  - Clicking the escape key
-INFO    2022-08-28 16:27:01,872 [main] base.TestBase  - Selecting from dropdown: vendor_CSS value as: Vendor 1
-INFO    2022-08-28 16:27:01,888 [main] base.TestBase  - scroll down 
-INFO    2022-08-28 16:27:02,152 [main] base.TestBase  - Typing in: admin_content_CSS entered value is: some content which is irrelavant now
-INFO    2022-08-28 16:27:02,288 [main] base.TestBase  - Clicking on: pre_price_XPATH
-INFO    2022-08-28 16:27:02,448 [main] base.TestBase  - Typing in: price_XPATH entered value is: 34
-INFO    2022-08-28 16:27:02,576 [main] base.TestBase  - Clicking on: pre_old_price_XPATH
-INFO    2022-08-28 16:27:02,688 [main] base.TestBase  - Typing in: old_price_XPATH entered value is: 44
-INFO    2022-08-28 16:27:02,824 [main] base.TestBase  - Clicking on: pre_product_cost_XPATH
-INFO    2022-08-28 16:27:02,928 [main] base.TestBase  - Typing in: product_cost_XPATH entered value is: 55
-INFO    2022-08-28 16:27:03,032 [main] base.TestBase  - Clicking on checkbox: disable_wishlist_XPATH
-INFO    2022-08-28 16:27:03,136 [main] base.TestBase  - Clicking on checkbox: call_for_price_XPATH
-INFO    2022-08-28 16:27:03,288 [main] base.TestBase  - Clicking on: pre_discounts_CSS
-INFO    2022-08-28 16:27:03,312 [main] base.TestBase  - Clicking the escape key
-INFO    2022-08-28 16:27:03,320 [main] base.TestBase  - scroll down 
-INFO    2022-08-28 16:27:03,520 [main] base.TestBase  - Clicking on: pre_weight_XPATH
-INFO    2022-08-28 16:27:03,696 [main] base.TestBase  - Typing in: weight_XPATH entered value is: 12.5
-INFO    2022-08-28 16:27:03,864 [main] base.TestBase  - Clicking on: pre_length_XPATH
-INFO    2022-08-28 16:27:04,000 [main] base.TestBase  - Typing in: length_XPATH entered value is: 8.4
-INFO    2022-08-28 16:27:04,168 [main] base.TestBase  - Clicking on: pre_width_XPATH
-INFO    2022-08-28 16:27:04,352 [main] base.TestBase  - Typing in: width_XPATH entered value is: 3.5
-INFO    2022-08-28 16:27:04,488 [main] base.TestBase  - Clicking on: pre_height_XPATH
-INFO    2022-08-28 16:27:04,616 [main] base.TestBase  - Typing in: height_XPATH entered value is: 6.8
-INFO    2022-08-28 16:27:04,704 [main] base.TestBase  - Clicking on checkbox: free_shipping_CSS
-INFO    2022-08-28 16:27:07,944 [main] base.TestBase  - Clicking on: save_CSS
+INFO    2022-11-26 07:49:57,986 [main] base.TestBase  - Config file found
+INFO    2022-11-26 07:49:57,999 [main] base.TestBase  - Config file loaded
+INFO    2022-11-26 07:49:57,999 [main] base.TestBase  - OBject Repository file found successfully
+INFO    2022-11-26 07:49:57,999 [main] base.TestBase  - Object Repository file loaded
+INFO    2022-11-26 07:49:58,356 [main] io.github.bonigarcia.wdm.WebDriverManager  - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
+INFO    2022-11-26 07:49:58,411 [main] io.github.bonigarcia.wdm.WebDriverManager  - Exporting webdriver.chrome.driver as C:\Users\apoorv\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
+INFO    2022-11-26 07:50:00,313 [main] base.TestBase  - Chrome driver launched successfully
+INFO    2022-11-26 07:50:02,269 [main] base.TestBase  - Clearing the auto fill from email_CSS
+INFO    2022-11-26 07:50:02,374 [main] base.TestBase  - Typing in: email_CSS entered value is: admin@yourstore.com
+INFO    2022-11-26 07:50:02,442 [main] base.TestBase  - Clearing the auto fill from password_CSS
+INFO    2022-11-26 07:50:02,523 [main] base.TestBase  - Typing in: password_CSS entered value is: admin
+INFO    2022-11-26 07:50:05,326 [main] base.TestBase  - Clicking on: login_XPATH
+INFO    2022-11-26 07:50:05,808 [main] base.TestBase  - Clicking on: catalog_XPATH
+INFO    2022-11-26 07:50:15,979 [main] base.TestBase  - Clicking on: product_CSS
+INFO    2022-11-26 07:50:29,486 [main] base.TestBase  - Clicking on: add_new_product_CSS
+INFO    2022-11-26 07:50:29,669 [main] base.TestBase  - Typing in: productName_XPATH entered value is: some product name
+INFO    2022-11-26 07:50:29,837 [main] base.TestBase  - Typing in: shortDescription_XPATH entered value is: thin and portable computer
+INFO    2022-11-26 07:50:39,982 [main] base.TestBase  - Switching the frame
+INFO    2022-11-26 07:50:40,433 [main] base.TestBase  - Typing in: Fulldescription_CSS entered value is: gaming laptop with high performance
+INFO    2022-11-26 07:50:40,457 [main] base.TestBase  - Switching back to parent frame
+INFO    2022-11-26 07:50:40,906 [main] base.TestBase  - Typing in: sku_XPATH entered value is: ABC023
+INFO    2022-11-26 07:50:41,266 [main] base.TestBase  - Clicking on: categories_CSS
+INFO    2022-11-26 07:50:41,511 [main] base.TestBase  - Clicking on: select_categories_CSS
+INFO    2022-11-26 07:50:41,835 [main] base.TestBase  - Clicking on: manufacturers_CSS
+INFO    2022-11-26 07:50:42,026 [main] base.TestBase  - Clicking on: select_manufacturers_CSS
+INFO    2022-11-26 07:50:42,047 [main] base.TestBase  - scroll down 
+INFO    2022-11-26 07:50:42,179 [main] base.TestBase  - Clicking on: product_tag_CSS
+INFO    2022-11-26 07:50:42,340 [main] base.TestBase  - Typing in: GTIN_number_CSS entered value is: ABC34
+INFO    2022-11-26 07:50:42,771 [main] base.TestBase  - Typing in: manufacturer_part_CSS entered value is: 1234
+INFO    2022-11-26 07:50:43,058 [main] base.TestBase  - Clicking on: customer_roles_CSS
+INFO    2022-11-26 07:50:43,218 [main] base.TestBase  - Clicking on: select_customer_roles_CSS
+INFO    2022-11-26 07:50:43,276 [main] base.TestBase  - Clicking the escape key
+INFO    2022-11-26 07:50:43,574 [main] base.TestBase  - Clicking on: limited_to_stores_CSS
+INFO    2022-11-26 07:50:43,818 [main] base.TestBase  - Clicking on: select_limited_to_stores_XPATH
+INFO    2022-11-26 07:50:43,842 [main] base.TestBase  - Clicking the escape key
+INFO    2022-11-26 07:50:44,127 [main] base.TestBase  - Selecting from dropdown: vendor_CSS value as: Vendor 1
+INFO    2022-11-26 07:50:44,159 [main] base.TestBase  - scroll down 
+INFO    2022-11-26 07:50:44,570 [main] base.TestBase  - Typing in: admin_content_CSS entered value is: some content which is irrelavant now
+INFO    2022-11-26 07:50:44,846 [main] base.TestBase  - Clicking on: pre_price_XPATH
+INFO    2022-11-26 07:50:44,960 [main] base.TestBase  - Typing in: price_XPATH entered value is: 34
+INFO    2022-11-26 07:50:45,088 [main] base.TestBase  - Clicking on: pre_old_price_XPATH
+INFO    2022-11-26 07:50:45,200 [main] base.TestBase  - Typing in: old_price_XPATH entered value is: 44
+INFO    2022-11-26 07:50:45,345 [main] base.TestBase  - Clicking on: pre_product_cost_XPATH
+INFO    2022-11-26 07:50:45,473 [main] base.TestBase  - Typing in: product_cost_XPATH entered value is: 55
+INFO    2022-11-26 07:50:45,555 [main] base.TestBase  - Clicking on checkbox: disable_wishlist_XPATH
+INFO    2022-11-26 07:50:45,626 [main] base.TestBase  - Clicking on checkbox: call_for_price_XPATH
+INFO    2022-11-26 07:50:45,799 [main] base.TestBase  - Clicking on: pre_discounts_CSS
+INFO    2022-11-26 07:50:45,825 [main] base.TestBase  - Clicking the escape key
+INFO    2022-11-26 07:50:45,835 [main] base.TestBase  - scroll down 
+INFO    2022-11-26 07:50:45,972 [main] base.TestBase  - Clicking on: pre_weight_XPATH
+INFO    2022-11-26 07:50:46,085 [main] base.TestBase  - Typing in: weight_XPATH entered value is: 12.5
+INFO    2022-11-26 07:50:46,232 [main] base.TestBase  - Clicking on: pre_length_XPATH
+INFO    2022-11-26 07:50:46,362 [main] base.TestBase  - Typing in: length_XPATH entered value is: 8.4
+INFO    2022-11-26 07:50:46,593 [main] base.TestBase  - Clicking on: pre_width_XPATH
+INFO    2022-11-26 07:50:46,717 [main] base.TestBase  - Typing in: width_XPATH entered value is: 3.5
+INFO    2022-11-26 07:50:47,028 [main] base.TestBase  - Clicking on: pre_height_XPATH
+INFO    2022-11-26 07:50:47,316 [main] base.TestBase  - Typing in: height_XPATH entered value is: 6.8
+INFO    2022-11-26 07:50:47,383 [main] base.TestBase  - Clicking on checkbox: free_shipping_CSS
+INFO    2022-11-26 07:50:50,196 [main] base.TestBase  - Clicking on: save_CSS
