@@ -1,4 +1,0 @@
-browser=chrome
-testsiteurl=https://admin-demo.nopcommerce.com/
-implicit.wait=10
-environment=local
